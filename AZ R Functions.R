@@ -4,23 +4,44 @@ options(continue = " ")
 # options(scipen = 10, digits = 10)
 windowsFonts(Times = windowsFont("TT Times New Roman"))
 windowsFonts(Lato = windowsFont("Lato Light"))
-library(ggplot2)  # for graphics
-library(ggsubplot)# more graphics
-library(ggthemes) # for ggplot themes
-library(grid)     # for unit
-library(scales)   # for percentage formatting
-library(stringr)  # for manipulating strings
-library(plyr)     # for dividing and conquering
-library(dplyr)    # divide and conquering with steriods
-library(quantmod) # for stock prices.
-library(reshape2) # for pivoting and reshaping data
-# library(BEST)     # for Bayesian testing
-library(gridExtra)# for layering multiple charts
-library(lubridate) # better dates 
-library(ggvis)     # interactive grammar of graphics
-# library(vcd) 	  # for graphical analysis of categorical data
-# library(xlsx)     # for reading xlsx files
-# library(sas7bdat) # for importing from sas data files
+
+load.pkgs <- function() {
+  
+  pkgs <- c("ggplot2", "ggsubplot", "ggthemes",
+            "grid", "scales", "stringr", "plyr",
+            "dplyr", "quantmod", "reshape2",
+            "BEST", "gridExtra", "lubridate",
+            "ggvis", "vcd")
+  
+  pkgs.to.install <- pkgs[!(pkgs %in% .packages(all.available = TRUE))]
+  
+  if (length(pkgs.to.install) > 0) {
+    install.packages(pkgs.to.install)
+  }
+  
+  
+  library(ggplot2)  # for graphics
+  library(ggsubplot)# more graphics
+  library(ggthemes) # for ggplot themes
+  library(grid)     # for unit
+  library(scales)   # for percentage formatting
+  library(stringr)  # for manipulating strings
+  library(plyr)     # for dividing and conquering
+  library(dplyr)    # divide and conquering with steriods
+  library(quantmod) # for stock prices.
+  library(reshape2) # for pivoting and reshaping data
+  library(BEST)     # for Bayesian testing
+  library(gridExtra)# for layering multiple charts
+  library(lubridate) # better dates 
+  library(ggvis)     # interactive grammar of graphics
+  library(vcd)     # for graphical analysis of categorical data
+  # library(xlsx)     # for reading xlsx files
+  # library(sas7bdat) # for importing from sas data files
+  
+  
+}
+
+load.pkgs()
 
 ## Default ggplot to NERA-like theme
 ggplot <- function(...) { 
@@ -133,10 +154,10 @@ var.wt <- function(x, w, na.rm = FALSE) {
 }
 
 
-# ggplotColours <- function(n=6, h=c(0, 360) +15){
-     # if ((diff(h)%%360) < 1) h[2] <- h[2] - 360/n
-     # hcl(h = (seq(h[1], h[2], length = n)), c = 100, l = 65)
- # }
+ggplotColours <- function(n=6, h=c(0, 360) +15){
+     if ((diff(h)%%360) < 1) h[2] <- h[2] - 360/n
+     hcl(h = (seq(h[1], h[2], length = n)), c = 100, l = 65)
+ }
  
  ## scales:::show_col(ggplotColours(n=3))
  
