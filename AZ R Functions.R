@@ -26,7 +26,7 @@ load.pkgs <- function() {
   library(grid)     # for unit
   library(scales)   # for percentage formatting
   library(stringr)  # for manipulating strings
-  library(plyr)     # for dividing and conquering
+  # library(plyr)     # for dividing and conquering
   library(dplyr)    # divide and conquering with steriods
   library(quantmod) # for stock prices.
   library(reshape2) # for pivoting and reshaping data
