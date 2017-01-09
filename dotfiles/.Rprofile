@@ -9,13 +9,18 @@ local({
 .First <- function() {
 
     options(
-        stringsAsFactors = FALSE,
-        continue = " ",
-        warnPartialMatchAttr = TRUE, warnPartialMatchDollar = TRUE,
-        max.print = 1000
+            continue = " ",
+            warnPartialMatchAttr = TRUE, 
+            warnPartialMatchDollar = TRUE,
+            warnPartialMatchArgs = TRUE,
+            warn = 2,
+            useFancyQuotes = FALSE
+            max.print = 120
         )
 
-
+  if (interactive()) {
+    suppressMessages(require(devtools))
+  }
 
 }
 
