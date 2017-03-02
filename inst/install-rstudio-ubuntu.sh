@@ -10,6 +10,6 @@ RSTUDIO_FILE=rstudio-server-"$RSTUDIO_VERSION"-amd64.deb
 wget https://s3.amazonaws.com/rstudio-dailybuilds/"$RSTUDIO_FILE"
 
 # sudo yum install --nogpgcheck "$RSTUDIO_FILE"
-sudo gdebi "$RSTUDIO_FILE" -y
+sudo gdebi "$RSTUDIO_FILE" -n
 
 
