@@ -7,7 +7,7 @@ q <- function (save="no", ...) {
 local({
   r <- getOption("repos")
   
-  if ("checkpoint" %in% utils:::install.packages()) {
+  if (require(checkpoint)) {
     mran_date <- Sys.Date() - 1
     r[["CRAN"]] <- paste0("https://mran.revolutionanalytics.com/snapshot/", mran_date)
     options(repos = r)
