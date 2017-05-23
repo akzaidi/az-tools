@@ -2,7 +2,8 @@
 
 ## install rstudio
 
-RSTUDIO_VERSION=1.0.136
+ARG1=${1:-1.0.136}
+RSTUDIO_VERSION=$ARG1
 
 # RSTUDIO_FILE=rstudio-server-rhel-"$RSTUDIO_VERSION"-x86_64.rpm
 RSTUDIO_FILE=rstudio-server-"$RSTUDIO_VERSION"-amd64.deb
@@ -10,6 +11,9 @@ RSTUDIO_FILE=rstudio-server-"$RSTUDIO_VERSION"-amd64.deb
 wget https://s3.amazonaws.com/rstudio-dailybuilds/"$RSTUDIO_FILE"
 
 # sudo yum install --nogpgcheck "$RSTUDIO_FILE"
+
+sudo apt-get install gdebi-core
+
 sudo gdebi "$RSTUDIO_FILE" -n
 
 
