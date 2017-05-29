@@ -12,6 +12,6 @@ wget https://s3.amazonaws.com/rstudio-dailybuilds/"$RSTUDIO_FILE"
 
 # sudo yum install --nogpgcheck "$RSTUDIO_FILE"
 
-apt-get install gdebi-core && gdebi "$RSTUDIO_FILE" -y
+apt-get install -y gdebi-core && gdebi "$RSTUDIO_FILE"
 
 
