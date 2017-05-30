@@ -18,13 +18,6 @@ RUN apt-get update && apt-get install -y apt-transport-https && \
     apt-get update && \
     apt-get install -y dotnet-dev-1.0.4
 
-# Install dotnet core
-RUN apt-get install -y apt-transport-https && \
-    sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list' && \
-    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893 && \
-    apt-get update && \
-    apt-get install -y dotnet-dev-1.0.4
-
 # install rstudio server
 RUN apt-get update \
         && apt-get install -y --no-install-recommends \
@@ -41,7 +34,7 @@ RUN apt-get update \
         gdebi-core \
         wget
 
-RUN wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-1.1.246-amd64.deb
+RUN wget https://s3naws.com/rstudio-dailybuilds/rstudio-server-1.1.246-amd64.deb
 RUN gdebi -nq rstudio-server-1.1.246-amd64.deb
 
 
