@@ -32,11 +32,11 @@ RUN wget https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-1.1.246-amd
 RUN gdebi -nq rstudio-server-1.1.246-amd64.deb
 
 
-# Install RStudio-Server
-#RUN wget https://raw.githubusercontent.com/akzaidi/etc/master/inst/install-rstudio-ubuntu.sh && \
-#       chmod +x ./install-rstudio-ubuntu.sh && \
-#       ./install-rstudio-ubuntu.sh 1.1.245
-
-
-# Make port 8787 available
+# startup scripts
 EXPOSE 8787
+
+CMD rstudio-server start
+
+CMD ["/usr/lib/rstudio-server/bin/rserver --server-daemonize 0"]
+CMD ["/bin/bash"]
+

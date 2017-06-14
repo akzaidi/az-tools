@@ -14,3 +14,5 @@ apt-get install -y gdebi-core
 gdebi --option=APT::Get::force-yes=1,APT::Get::Assume-Yes=1 -n "$RSTUDIO_FILE"
 
 
+## remove old files
+rm $RSTUDIO_FILE
