@@ -4,6 +4,7 @@ filetype off                  " required
 set number
 
 set background=dark
+set backspace=2
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -20,8 +21,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'tpope/vim-fugitive'
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'neovim/neovim'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+Plugin 'benmills/vimux'
+Plugin 'ivanov/vim-ipython'
+Plugin 'tpope/vim-fugitive'
+Plugin 'epeli/slimux'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -49,3 +52,16 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+let R_in_buffer = 0
+let R_applescript = 0
+let R_tmux_split = 1
+
+"slimux
+""I have this built into the script, which is not
+"what the original has
+nnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
+vnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
+nnoremap <C-c><C-v> :SlimuxREPLConfigure<CR>
+
+"remap ESC
+inoremap jj <ESC>
