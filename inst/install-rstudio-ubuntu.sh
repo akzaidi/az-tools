@@ -8,7 +8,7 @@ RSTUDIO_VERSION=$ARG1
 # RSTUDIO_FILE=rstudio-server-rhel-"$RSTUDIO_VERSION"-x86_64.rpm
 RSTUDIO_FILE=rstudio-server-"$RSTUDIO_VERSION"-amd64.deb
 
-wget https://s3.amazonaws.com/rstudio-ide-build/server/precise/amd64/"$RSTUDIO_FILE"
+wget https://s3.amazonaws.com/rstudio-ide-build/server/precise/amd64/$RSTUDIO_FILE"
 #wget https://s3.amazonaws.com/rstudio-dailybuilds/"$RSTUDIO_FILE"
 
 apt-get install -y gdebi-core 
