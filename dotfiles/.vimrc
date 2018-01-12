@@ -52,16 +52,43 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" Auto-install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+	  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+	      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+" Specify a directory for plugins
+" " - For Neovim: ~/.local/share/nvim/plugged
+" " - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+"
+" " Make sure you use single quotes
+Plug 'cjrh/vim-conda'
+" Initialize plugin system
+call plug#end()
+
 let R_in_buffer = 0
 let R_applescript = 0
 let R_tmux_split = 1
 
 "slimux
-""I have this built into the script, which is not
-"what the original has
-nnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
-vnoremap <C-c><C-c> :SlimuxREPLSendLine<CR>
-nnoremap <C-c><C-v> :SlimuxREPLConfigure<CR>
+map <C-c><C-c> :SlimuxREPLSendLine<CR>
+vmap <C-c><C-c> :SlimuxREPLSendSelection<CR>
+" error with ipython >= 5 https://github.com/epeli/slimux/issues/63
+" vnoremap <C-c><C-c> :<C-w>SlimuxShellRun %cpaste<CR>:'<,'>SlimuxREPLSendSelection<CR>:SlimuxShellRun --<CR>
+
+"jedi use py3
+let g:python2_host_prog = '/anaconda/bin/python'
+let g:python3_host_prog = '/anaconda/envs/py35/bin/python'
+let g:jedi#force_py_version = 3
+let g:UltisnipsUsePythonVersion = 3
+let g:conda_startup_msg_suppress = 1
+
 
 "remap ESC
 inoremap jj <ESC>
+
+"pathogen
+execute pathogen#infect()
