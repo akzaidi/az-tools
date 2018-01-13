@@ -66,6 +66,8 @@ call plug#begin('~/.vim/plugged')
 "
 " " Make sure you use single quotes
 Plug 'cjrh/vim-conda'
+Plug 'bfredl/nvim-ipy'
+Plug 'hkupty/iron.nvim'
 " Initialize plugin system
 call plug#end()
 
@@ -86,6 +88,8 @@ let g:jedi#force_py_version = 3
 let g:UltisnipsUsePythonVersion = 3
 let g:conda_startup_msg_suppress = 1
 
+"vertical split for iron.nvim
+let g:iron_repl_open_cmd = 'topleft vertical 100 split'
 
 "remap ESC
 inoremap jj <ESC>
