@@ -2,9 +2,36 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set number
-
+set splitright
 set background=dark
 set backspace=2
+set gdefault            " Use 'g' flag by default with :s/foo/bar/.
+set magic               " Use 'magic' patterns (extended regular expressions).
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+" Search and Replace
+nmap <Leader>s :%s//g<Left><Left>
+
+" Relative numbering
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+    set number
+  else
+    set rnu
+  endif
+endfunc
+
+" Toggle between normal and relative numbering.
+nnoremap <leader>r :call NumberToggle()<cr>
+
+nnoremap ; :    " Use ; for commands.
+nnoremap Q @q   " Use Q to execute default register.
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -25,6 +52,7 @@ Plugin 'benmills/vimux'
 Plugin 'ivanov/vim-ipython'
 Plugin 'tpope/vim-fugitive'
 Plugin 'epeli/slimux'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -70,10 +98,34 @@ Plug 'bfredl/nvim-ipy'
 Plug 'hkupty/iron.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'gabrielelana/vim-markdown'
 
 " Initialize plugin system
 call plug#end()
 
+"ctrlP settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" leader key
+let mapleader="\<SPACE>"
+
+
+"airline settings
+let g:airline#extensions#tabline#enabled = 2
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#right_alt_sep = '|'
+let g:airline_left_sep = ' '
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = ' '
+let g:airline_right_alt_sep = '|'
+
+"nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
 let R_in_buffer = 0
@@ -94,7 +146,7 @@ let g:UltisnipsUsePythonVersion = 3
 let g:conda_startup_msg_suppress = 1
 
 "vertical split for iron.nvim
-let g:iron_repl_open_cmd = 'topleft vertical 100 split'
+let g:iron_repl_open_cmd = 'vsplit'
 
 "remap ESC
 inoremap jj <ESC>
