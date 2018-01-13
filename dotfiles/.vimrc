@@ -67,9 +67,14 @@ call plug#begin('~/.vim/plugged')
 " " Make sure you use single quotes
 Plug 'cjrh/vim-conda'
 Plug 'bfredl/nvim-ipy'
-Plug 'hkupty/iron.nvim'
+Plug 'hkupty/iron.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'vim-airline/vim-airline'
+
 " Initialize plugin system
 call plug#end()
+
+map <C-n> :NERDTreeToggle<CR>
 
 let R_in_buffer = 0
 let R_applescript = 0
