@@ -101,6 +101,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'gabrielelana/vim-markdown'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'freitass/todo.txt-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -112,6 +115,11 @@ let g:ctrlp_cmd = 'CtrlP'
 " leader key
 let mapleader="\<SPACE>"
 
+" set esc
+inoremap ;; <Esc>
+
+" fuzzy search shortcut
+nnoremap <C-p> :FZF<CR>
 
 "airline settings
 let g:airline#extensions#tabline#enabled = 2
