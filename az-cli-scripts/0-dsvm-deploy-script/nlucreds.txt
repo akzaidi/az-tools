@@ -1,5 +1,0 @@
-VM Name =  aznlpdev
-Username =  alizaidi
-DNS Name =  aznludev.eastus.cloudapp.azure.com
-Network Security Group =  aznlpdevNSG
-Resource Group =  aztatkeast

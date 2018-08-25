@@ -36,6 +36,9 @@ DNS=$ARG6
 nsgp="NSG"
 NSG=$VMNAME$nsgp
 
+basevm = "Standard_NC12"
+vmtype=${7:-$basevm}
+
 # Create Resource Group
 
 az group create -n "$RG" -l "$LOC"
@@ -48,7 +51,7 @@ az vm create \
     --admin-username "$SSHADMIN" \
     --public-ip-address-dns-name "$DNS" \
     --image microsoft-ads:linux-data-science-vm-ubuntu:linuxdsvmubuntu:latest \
-    --size Standard_NC12 \
+    --size "$vmtype" \
 
 # verify image SKU by searching dsvm skus
 # az vm image list --all --output table --location eastus --publisher microsoft-ads

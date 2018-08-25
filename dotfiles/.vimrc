@@ -158,6 +158,3 @@ let g:iron_repl_open_cmd = 'vsplit'
 
 "remap ESC
 inoremap jj <ESC>
-
-"pathogen
-execute pathogen#infect()
