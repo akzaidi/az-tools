@@ -17,35 +17,19 @@ if (!dir.exists("~/Rlib/")) dir.create("~/Rlib/")
 install.packages("devtools")
 install.packages(c("httr", "curl"))
 devtools::install_github("tidyverse/tidyverse")
-
-
-# feather -----------------------------------------------------------------
-
-
 install.packages("feather")
-
-
-# dplyrXdf ----------------------------------------------------------------
-
 
 # install.packages("tidyverse")
 # library(tidyverse)
-# # devtools::install_github("RevolutionAnalytics/dplyrXdf")
+# devtools::install_github("RevolutionAnalytics/dplyrXdf")
 
 # sudo su -
 # R CMD javareconf
 # install.packages("XLConnect")
-# install.packages("tidyquant")
-
-# Java packages -----------------------------------------------------------
+install.packages("tidyquant")
 
 
-# CNTK-R
 # devtools::install_github("Microsoft/CNTK-R")
-
-
-# NLP Packages ------------------------------------------------------------
-
 
 install.packages("tidytext")
 install.packages("text2vec")
@@ -59,15 +43,13 @@ devtools::install_github("rstudio/rmarkdown")
 devtools::install_github("rstudio/bookdown")
 devtools::install_github("rstudio/blogdown")
 devtools::install_github("yihui/xaringan")
-devtools::install_github("gadenbuie/xaringanthemer")
 
 
 # install shinyverse ------------------------------------------------------
 
 devtools::install_github("HenrikBengtsson/future")
 devtools::install_github("rstudio/promises")
-devtools::install_github("rstudio/shiny")
-# devtools::install_github("rstudio/shiny@async")
+devtools::install_github("rstudio/shiny@async")
 
 
 # rstudio tf packages -----------------------------------------------------
@@ -92,7 +74,6 @@ devtools::install_github("hadley/ggplot2")
 devtools::install_github("thomasp85/patchwork")
 devtools::install_github("thomasp85/particles")
 devtools::install_github("thomasp85/ggraph")
-devtools::install_github("thomasp85/gganimate")
 devtools::install_github("thomasp85/tidygraph")
 devtools::install_github("ropensci/plotly")
 devtools::install_github("hrbrmstr/hrbrthemes")
@@ -108,7 +89,6 @@ d[grepl("Light", d$FontName), ]$FamilyName <- font_rc_light  # "Roboto Condensed
 write.csv(d, extrafont:::fonttable_file(), row.names = FALSE)
 extrafont::loadfonts()
 
-library(hrbrthemes)
 extrafont::loadfonts()
 theme_modern_rc2 <- function() {
   hrbrthemes::theme_modern_rc() +
