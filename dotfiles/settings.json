@@ -1,0 +1,158 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.wordWrap": "on",
+    "window.zoomLevel": 0,
+    //"vim.disableAnnoyingNeovimMessage": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+          "before": ["j","j"],
+          "after": ["<Esc>"]
+      }
+    ],
+    "vim.visualstar": true,
+    "editor.minimap.enabled": true,
+    "editor.rulers": [80,120],
+    //"explorer.openEditors.dynamicHeight": true,
+    "explorer.openEditors.visible": 10,
+    "terminal.integrated.shellArgs.osx": [
+        "-l"
+    ],
+    "python.venvPath": "/Users/azaidi/anaconda/envs",
+    "python.pythonPath": "/Users/azaidi/anaconda/envs/py36",
+    //"workbench.panel.location": "right",
+    "autoDocstring.docstringFormat": "numpy",
+    "latex-workshop.intellisense.citation.type": "browser",
+    "[markdown]": {
+          "editor.quickSuggestions": true
+      },
+      "git.autofetch": true,
+      "latex-workshop.latex.tools": [
+        {
+          "command": "/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/pdflatex",
+          "args": [
+            "--synctex",
+            "--pdf",
+            "--tex-option=\"-interaction=nonstopmode\"",
+            "--tex-option=\"-file-line-error\"",
+            "%DOC%.tex"
+          ],
+          "name": "Step 1: /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/pdflatex"
+        },
+        {
+          "command": "/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/bibtex",
+          "args": [
+            "%DOCFILE%"
+          ],
+          "name": "Step 2: /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/bibtex"
+        },
+        {
+          "command": "/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/pdflatex",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+          ],
+          "name": "Step 3: /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/pdflatex"
+        },
+        {
+          "command": "/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/pdflatex",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+          ],
+          "name": "Step 4: /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/pdflatex"
+        }
+      ],
+      "latex-workshop.latex.recipes": [
+        {
+          "name": "toolchain",
+          "tools": [
+            "Step 1: /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/pdflatex",
+            "Step 2: /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/bibtex",
+            "Step 3: /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/pdflatex",
+            "Step 4: /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin/pdflatex"
+          ]
+        }
+      ],
+      "latex-workshop.view.pdf.viewer": "tab",
+      "workbench.editor.showTabs": true,
+      "breadcrumbs.enabled": true,
+      "breadcrumbs.symbolPath": "on",
+      "python.jediEnabled": false,
+      "gitlens.keymap": "chorded",
+      "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+      },
+      "gitlens.views.fileHistory.enabled": false,
+      "gitlens.views.lineHistory.enabled": false,
+      "files.eol": "\n",
+      "editor.fontLigatures": true,
+      "editor.fontFamily": "Fira Code",
+      "editor.suggestSelection": "first",
+      "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+      "files.associations": {
+        "*.rmd": "markdown"
+      },
+      "editor.quickSuggestions": {
+        "strings": true
+      },
+      "python.dataScience.sendSelectionToInteractiveWindow": true,
+      "clock.alignment": "Right",
+      "clock.format": "dddd, mmmm dd, HH:MM:ss",
+      "workbench.colorTheme": "Material Theme Darker High Contrast",
+      "python.insidersChannel": "off",
+      "explorer.confirmDragAndDrop": false,
+      "markdown.preview.breaks": true,
+      "git.confirmSync": false,
+      "workbench.tree.indent": 18,
+      "markdown-preview-enhanced.frontMatterRenderingOption": "table",
+      "workbench.colorCustomizations": {
+        "statusBar.background": "#1b1b1b",
+        "statusBar.foreground": "#db68a2",
+        "editorLineNumber.activeForeground": "#f7f1f1",
+        "editorLineNumber.foreground": "#818181",
+        "activityBarBadge.background": "#388E3C",
+        "list.activeSelectionForeground": "#388E3C",
+        "list.inactiveSelectionForeground": "#388E3C",
+        "list.highlightForeground": "#388E3C",
+        "scrollbarSlider.activeBackground": "#388E3C50",
+        "editorSuggestWidget.highlightForeground": "#388E3C",
+        "textLink.foreground": "#388E3C",
+        "progressBar.background": "#388E3C",
+        "pickerGroup.foreground": "#388E3C",
+        "tab.activeBorder": "#388E3C",
+        "notificationLink.foreground": "#388E3C",
+        "editorWidget.resizeBorder": "#388E3C",
+        "editorWidget.border": "#388E3C",
+        "settings.modifiedItemIndicator": "#388E3C",
+        "settings.headerForeground": "#388E3C",
+        "panelTitle.activeBorder": "#388E3C",
+        "breadcrumb.activeSelectionForeground": "#388E3C",
+        "menu.selectionForeground": "#388E3C",
+        "menubar.selectionForeground": "#388E3C",
+        "editor.findMatchBorder": "#388E3C",
+        "selection.background": "#388E3C40"
+      },
+      "markdown.preview.fontFamily": "Fira Code",
+      "markdown.preview.fontSize": 13,
+      "editor.tokenColorCustomizations": {
+        "comments": "#7a7a7a",
+        "textMateRules": [
+            {
+                "scope":"string.quoted.docstring.multi.python",
+                "settings": {
+                    "foreground": "#fcba03" //change to your preference
+                }
+            }
+        ]
+    },
+    "markdown.extension.list.indentationSize": "inherit",
+    "terminal.integrated.inheritEnv": false,
+    "materialTheme.accent": "Breaking Bad"
+
+    }
