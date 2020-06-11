@@ -22,8 +22,8 @@ local({
             max.print = 120
         )
 
-  if (interactive()) {
-    suppressMessages(require(devtools))
-  }
+  # if (interactive()) {
+  #   suppressMessages(require(devtools))
+  # }
 
 }

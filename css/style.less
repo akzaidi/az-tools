@@ -1,0 +1,126 @@
+// Please visit the URL below for more information:
+//   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css
+.markdown-preview.markdown-preview {
+  background-color: black;
+
+  // Custom tags for blog
+  info {
+    display: block;
+    font-family: 'Fira Code', 'D2Coding ligature', monospace;
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  author {
+    font-size: 1.4rem;
+  }
+
+  // Text align
+  .right { text-align: right; }
+  .center { text-align: center; }
+
+  // Normal text
+  p, li, td, ul {
+    font-family: 'Fira Code', 'D2Coding ligature', monospace;
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: whitesmoke;
+    li {
+      font-size: 0.8rem;
+    }
+  }
+
+  // Block quote
+
+  blockquote
+  {
+    font-family: 'Fira Code', 'D2Coding ligature', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color:transparent;
+    margin-left: 10px;
+  }
+
+  // Bold text
+  b, strong, th {
+    font-family: 'Fira Code', 'D2Coding ligature', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: whitesmoke;
+  }
+
+  // <h1> ... <h6>
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fira Code', 'D2Coding ligature', monospace;
+    color: gold;
+    font-weight: 900;
+  }
+  h1 {
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+  }
+  h2, h3 {
+    margin-bottom: 10px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #EEEEEE;
+  }
+
+  blockquote > p, li {
+    font-size: 0.8rem;
+  }
+
+  // Embed code blocks
+  .mono { 
+    font-family: 'Fira Code', 'D2Coding ligature', monospace;
+  }
+  .noliga { font-variant-ligatures: normal; }
+  .alt01 {
+    background-color: rgba(240, 240, 240, 0.2);
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 5px solid #999999;
+    border-right: 0;
+  }
+  pre {
+    page-break-inside: auto;
+    word-break: break-all !important; // Automatic line break
+    font-size: 0.8rem !important;
+    font-family: 'Fira Code', 'D2Coding ligature', monospace;
+    font-variant-ligatures: normal;
+  }
+  code {
+    page-break-inside: auto;
+    word-break: break-all !important; // Automatic line break
+    font-size: 0.8rem !important;
+    font-family: 'Fira Code', 'D2Coding ligature', monospace;
+    font-variant-ligatures: none;
+  }
+
+  // Extra things
+  pagebreak {
+    display: block;
+    height: 0;
+    width: 0;
+    page-break-before: always;
+  }
+
+  // Presentation
+  .reveal .slides {
+    p, li, td {
+      font-family: 'Noto Sans CJK KR', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-top: 12px;
+      li {
+        font-size: 1.4rem;
+        margin-top: 6px;
+      }
+      code {
+        font-size: 1.6rem !important;
+      }
+    }
+    h1 {
+      font-family: "koverwatch", "나눔스퀘어", sans-serif;
+      font-size: 3.5rem;
+    }
+  }
+}
