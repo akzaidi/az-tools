@@ -17,3 +17,8 @@ drmi() { docker rmi $1}
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 # Dockerfile build, e.g., $dbu alizaidi/test
 dbu() { docker build -t=$1 .; }
+
+## bonsai
+alias bbl="bonsai brain list"
+alias bbsl="bonsai simulator unmanaged list"
+bbc() { bonsai brain create -b $1}
